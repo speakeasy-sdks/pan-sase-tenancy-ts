@@ -1,0 +1,14 @@
+configVersion: 1.0.0
+generation:
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  sdkClassName: sase-tenancy
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
+  telemetryEnabled: false
+typescript:
+  version: 0.0.1
+  author: PANW
+  packageName: sase-tenancy
