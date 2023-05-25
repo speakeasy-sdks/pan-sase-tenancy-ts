@@ -16,5 +16,5 @@ generation:
 typescript:
   version: 1.0.0
   author: PANW
-  maxMethodParams: 0
+  maxMethodParams: 4
   packageName: sase-tenancy
