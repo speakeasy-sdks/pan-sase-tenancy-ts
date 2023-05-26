@@ -7,13 +7,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class GetTenancyV1TenantServiceGroupsSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=http;subtype=bearer;name=Authorization",
-  })
-  bearer: string;
-}
-
 export class GetTenancyV1TenantServiceGroupsRequest extends SpeakeasyBase {
   /**
    * Indicates whether the response structure lists groups in

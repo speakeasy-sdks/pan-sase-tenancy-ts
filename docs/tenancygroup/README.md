@@ -25,15 +25,17 @@ import { SaseTenancy } from "sase-tenancy";
 import { PostTenancyV1TenantServiceGroupsResponse } from "sase-tenancy/dist/sdk/models/operations";
 import { TenantServiceGroupCreateVertical, TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared";
 
-const sdk = new SaseTenancy();
+const sdk = new SaseTenancy({
+  security: {
+    bearer: "YOUR_BEARER_TOKEN_HERE",
+  },
+});
 
 sdk.tenancyGroup.create({
   displayName: "Example TSG",
   parentId: "1378242802",
   supportContact: "user@example.com",
   vertical: TenantServiceGroupCreateVertical.HighTech,
-}, {
-  bearer: "YOUR_BEARER_TOKEN_HERE",
 }).then((res: PostTenancyV1TenantServiceGroupsResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -56,13 +58,13 @@ import { SaseTenancy } from "sase-tenancy";
 import { DeleteTenancyV1TenantServiceGroupsTsgIdResponse } from "sase-tenancy/dist/sdk/models/operations";
 import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared";
 
-const sdk = new SaseTenancy();
+const sdk = new SaseTenancy({
+  security: {
+    bearer: "YOUR_BEARER_TOKEN_HERE",
+  },
+});
 
-sdk.tenancyGroup.delete({
-  tsgId: "1378242802",
-}, {
-  bearer: "YOUR_BEARER_TOKEN_HERE",
-}).then((res: DeleteTenancyV1TenantServiceGroupsTsgIdResponse) => {
+sdk.tenancyGroup.delete("1378242802").then((res: DeleteTenancyV1TenantServiceGroupsTsgIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -81,13 +83,13 @@ import { SaseTenancy } from "sase-tenancy";
 import { GetTenancyV1TenantServiceGroupsTsgIdResponse } from "sase-tenancy/dist/sdk/models/operations";
 import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared";
 
-const sdk = new SaseTenancy();
+const sdk = new SaseTenancy({
+  security: {
+    bearer: "YOUR_BEARER_TOKEN_HERE",
+  },
+});
 
-sdk.tenancyGroup.get({
-  tsgId: "1378242802",
-}, {
-  bearer: "YOUR_BEARER_TOKEN_HERE",
-}).then((res: GetTenancyV1TenantServiceGroupsTsgIdResponse) => {
+sdk.tenancyGroup.get("1378242802").then((res: GetTenancyV1TenantServiceGroupsTsgIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -108,13 +110,13 @@ import { SaseTenancy } from "sase-tenancy";
 import { GetTenancyV1TenantServiceGroupsResponse } from "sase-tenancy/dist/sdk/models/operations";
 import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared";
 
-const sdk = new SaseTenancy();
+const sdk = new SaseTenancy({
+  security: {
+    bearer: "YOUR_BEARER_TOKEN_HERE",
+  },
+});
 
-sdk.tenancyGroup.list({
-  hierarchy: false,
-}, {
-  bearer: "YOUR_BEARER_TOKEN_HERE",
-}).then((res: GetTenancyV1TenantServiceGroupsResponse) => {
+sdk.tenancyGroup.list(false).then((res: GetTenancyV1TenantServiceGroupsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -140,16 +142,13 @@ import {
 } from "sase-tenancy/dist/sdk/models/operations";
 import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared";
 
-const sdk = new SaseTenancy();
+const sdk = new SaseTenancy({
+  security: {
+    bearer: "YOUR_BEARER_TOKEN_HERE",
+  },
+});
 
-sdk.tenancyGroup.listAncestors({
-  fields: "corrupti",
-  includeSelf: false,
-  sort: PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSort.Desc,
-  tsgId: "1378242802",
-}, {
-  bearer: "YOUR_BEARER_TOKEN_HERE",
-}).then((res: PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsResponse) => {
+sdk.tenancyGroup.listAncestors("1378242802", "corrupti", false, PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSort.Desc).then((res: PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -172,15 +171,13 @@ import { SaseTenancy } from "sase-tenancy";
 import { PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenResponse } from "sase-tenancy/dist/sdk/models/operations";
 import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared";
 
-const sdk = new SaseTenancy();
+const sdk = new SaseTenancy({
+  security: {
+    bearer: "YOUR_BEARER_TOKEN_HERE",
+  },
+});
 
-sdk.tenancyGroup.listChildren({
-  hierarchy: false,
-  includeSelf: false,
-  tsgId: "1378242802",
-}, {
-  bearer: "YOUR_BEARER_TOKEN_HERE",
-}).then((res: PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenResponse) => {
+sdk.tenancyGroup.listChildren("1378242802", false, false).then((res: PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -202,18 +199,17 @@ import { SaseTenancy } from "sase-tenancy";
 import { PutTenancyV1TenantServiceGroupsTsgIdResponse } from "sase-tenancy/dist/sdk/models/operations";
 import { TenantServiceGroupUpdateVertical, TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared";
 
-const sdk = new SaseTenancy();
+const sdk = new SaseTenancy({
+  security: {
+    bearer: "YOUR_BEARER_TOKEN_HERE",
+  },
+});
 
 sdk.tenancyGroup.update({
-  tenantServiceGroupUpdate: {
-    displayName: "Example TSG",
-    supportContact: "user@example.com",
-    vertical: TenantServiceGroupUpdateVertical.HighTech,
-  },
-  tsgId: "1378242802",
-}, {
-  bearer: "YOUR_BEARER_TOKEN_HERE",
-}).then((res: PutTenancyV1TenantServiceGroupsTsgIdResponse) => {
+  displayName: "Example TSG",
+  supportContact: "user@example.com",
+  vertical: TenantServiceGroupUpdateVertical.HighTech,
+}, "1378242802").then((res: PutTenancyV1TenantServiceGroupsTsgIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }

@@ -29,6 +29,7 @@ src/sdk/models/operations/index.ts
 src/sdk/models/shared/tenantservicegroup.ts
 src/sdk/models/shared/tenantservicegroupcreate.ts
 src/sdk/models/shared/tenantservicegroupupdate.ts
+src/sdk/models/shared/security.ts
 src/sdk/models/shared/index.ts
 docs/sasetenancy/README.md
 docs/tenancygroup/README.md

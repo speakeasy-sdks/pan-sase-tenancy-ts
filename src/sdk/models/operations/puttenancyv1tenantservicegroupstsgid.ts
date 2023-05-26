@@ -6,13 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class PutTenancyV1TenantServiceGroupsTsgIdSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=http;subtype=bearer;name=Authorization",
-  })
-  bearer: string;
-}
-
 export class PutTenancyV1TenantServiceGroupsTsgIdRequest extends SpeakeasyBase {
   @SpeakeasyMetadata({ data: "request, media_type=application/json" })
   tenantServiceGroupUpdate: shared.TenantServiceGroupUpdate;

@@ -43,7 +43,6 @@ export class TenancyGroup {
    */
   async create(
     req: shared.TenantServiceGroupCreate,
-    security: operations.PostTenancyV1TenantServiceGroupsSecurity,
     config?: AxiosRequestConfig
   ): Promise<operations.PostTenancyV1TenantServiceGroupsResponse> {
     if (!(req instanceof utils.SpeakeasyBase)) {
@@ -68,15 +67,7 @@ export class TenancyGroup {
       }
     }
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.PostTenancyV1TenantServiceGroupsSecurity(
-        security
-      );
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
     if (reqBody == null || Object.keys(reqBody).length === 0)
@@ -134,14 +125,12 @@ export class TenancyGroup {
    *
    */
   async delete(
-    req: operations.DeleteTenancyV1TenantServiceGroupsTsgIdRequest,
-    security: operations.DeleteTenancyV1TenantServiceGroupsTsgIdSecurity,
+    tsgId: string,
     config?: AxiosRequestConfig
   ): Promise<operations.DeleteTenancyV1TenantServiceGroupsTsgIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.DeleteTenancyV1TenantServiceGroupsTsgIdRequest(req);
-    }
-
+    const req = new operations.DeleteTenancyV1TenantServiceGroupsTsgIdRequest({
+      tsgId: tsgId,
+    });
     const baseURL: string = this._serverURL;
     const url: string = utils.generateURL(
       baseURL,
@@ -149,15 +138,7 @@ export class TenancyGroup {
       req
     );
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.DeleteTenancyV1TenantServiceGroupsTsgIdSecurity(
-        security
-      );
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
     headers["Accept"] = "application/json";
@@ -209,14 +190,12 @@ export class TenancyGroup {
    *
    */
   async get(
-    req: operations.GetTenancyV1TenantServiceGroupsTsgIdRequest,
-    security: operations.GetTenancyV1TenantServiceGroupsTsgIdSecurity,
+    tsgId: string,
     config?: AxiosRequestConfig
   ): Promise<operations.GetTenancyV1TenantServiceGroupsTsgIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetTenancyV1TenantServiceGroupsTsgIdRequest(req);
-    }
-
+    const req = new operations.GetTenancyV1TenantServiceGroupsTsgIdRequest({
+      tsgId: tsgId,
+    });
     const baseURL: string = this._serverURL;
     const url: string = utils.generateURL(
       baseURL,
@@ -224,15 +203,7 @@ export class TenancyGroup {
       req
     );
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.GetTenancyV1TenantServiceGroupsTsgIdSecurity(
-        security
-      );
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
     headers["Accept"] = "application/json";
@@ -286,27 +257,17 @@ export class TenancyGroup {
    *
    */
   async list(
-    req: operations.GetTenancyV1TenantServiceGroupsRequest,
-    security: operations.GetTenancyV1TenantServiceGroupsSecurity,
+    hierarchy?: boolean,
     config?: AxiosRequestConfig
   ): Promise<operations.GetTenancyV1TenantServiceGroupsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.GetTenancyV1TenantServiceGroupsRequest(req);
-    }
-
+    const req = new operations.GetTenancyV1TenantServiceGroupsRequest({
+      hierarchy: hierarchy,
+    });
     const baseURL: string = this._serverURL;
     const url: string =
       baseURL.replace(/\/$/, "") + "/tenancy/v1/tenant_service_groups";
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.GetTenancyV1TenantServiceGroupsSecurity(
-        security
-      );
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
     const queryParams: string = utils.serializeQueryParams(req);
@@ -364,17 +325,21 @@ export class TenancyGroup {
    *
    */
   async listAncestors(
-    req: operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsRequest,
-    security: operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSecurity,
+    tsgId: string,
+    fields?: string,
+    includeSelf?: boolean,
+    sort?: operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSort,
     config?: AxiosRequestConfig
   ): Promise<operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req =
-        new operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsRequest(
-          req
-        );
-    }
-
+    const req =
+      new operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsRequest(
+        {
+          tsgId: tsgId,
+          fields: fields,
+          includeSelf: includeSelf,
+          sort: sort,
+        }
+      );
     const baseURL: string = this._serverURL;
     const url: string = utils.generateURL(
       baseURL,
@@ -382,16 +347,7 @@ export class TenancyGroup {
       req
     );
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security =
-        new operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSecurity(
-          security
-        );
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
     const queryParams: string = utils.serializeQueryParams(req);
@@ -451,17 +407,19 @@ export class TenancyGroup {
    *
    */
   async listChildren(
-    req: operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenRequest,
-    security: operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenSecurity,
+    tsgId: string,
+    hierarchy?: boolean,
+    includeSelf?: boolean,
     config?: AxiosRequestConfig
   ): Promise<operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req =
-        new operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenRequest(
-          req
-        );
-    }
-
+    const req =
+      new operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenRequest(
+        {
+          tsgId: tsgId,
+          hierarchy: hierarchy,
+          includeSelf: includeSelf,
+        }
+      );
     const baseURL: string = this._serverURL;
     const url: string = utils.generateURL(
       baseURL,
@@ -469,16 +427,7 @@ export class TenancyGroup {
       req
     );
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security =
-        new operations.PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenSecurity(
-          security
-        );
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...config?.headers };
     const queryParams: string = utils.serializeQueryParams(req);
@@ -537,14 +486,14 @@ export class TenancyGroup {
    *
    */
   async update(
-    req: operations.PutTenancyV1TenantServiceGroupsTsgIdRequest,
-    security: operations.PutTenancyV1TenantServiceGroupsTsgIdSecurity,
+    tenantServiceGroupUpdate: shared.TenantServiceGroupUpdate,
+    tsgId: string,
     config?: AxiosRequestConfig
   ): Promise<operations.PutTenancyV1TenantServiceGroupsTsgIdResponse> {
-    if (!(req instanceof utils.SpeakeasyBase)) {
-      req = new operations.PutTenancyV1TenantServiceGroupsTsgIdRequest(req);
-    }
-
+    const req = new operations.PutTenancyV1TenantServiceGroupsTsgIdRequest({
+      tenantServiceGroupUpdate: tenantServiceGroupUpdate,
+      tsgId: tsgId,
+    });
     const baseURL: string = this._serverURL;
     const url: string = utils.generateURL(
       baseURL,
@@ -566,15 +515,7 @@ export class TenancyGroup {
       }
     }
 
-    if (!(security instanceof utils.SpeakeasyBase)) {
-      security = new operations.PutTenancyV1TenantServiceGroupsTsgIdSecurity(
-        security
-      );
-    }
-    const client: AxiosInstance = utils.createSecurityClient(
-      this._defaultClient,
-      security
-    );
+    const client: AxiosInstance = this._securityClient || this._defaultClient;
 
     const headers = { ...reqBodyHeaders, ...config?.headers };
     if (reqBody == null || Object.keys(reqBody).length === 0)

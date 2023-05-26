@@ -6,13 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class DeleteTenancyV1TenantServiceGroupsTsgIdSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=http;subtype=bearer;name=Authorization",
-  })
-  bearer: string;
-}
-
 export class DeleteTenancyV1TenantServiceGroupsTsgIdRequest extends SpeakeasyBase {
   /**
    * A unique identifier for the tenant service group.

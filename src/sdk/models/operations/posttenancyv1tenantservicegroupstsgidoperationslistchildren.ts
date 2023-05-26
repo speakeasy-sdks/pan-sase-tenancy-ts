@@ -7,14 +7,18 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=http;subtype=bearer;name=Authorization",
-  })
-  bearer: string;
-}
-
 export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenRequest extends SpeakeasyBase {
+  /**
+   * A unique identifier for the tenant service group.
+   *
+   * @remarks
+   *
+   */
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=tsg_id",
+  })
+  tsgId: string;
+
   /**
    * If `true`, return the entire descendent hierarchy.
    *
@@ -41,17 +45,6 @@ export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListChildrenRequest 
     data: "queryParam, style=form;explode=true;name=include_self",
   })
   includeSelf?: boolean;
-
-  /**
-   * A unique identifier for the tenant service group.
-   *
-   * @remarks
-   *
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=tsg_id",
-  })
-  tsgId: string;
 }
 
 /**

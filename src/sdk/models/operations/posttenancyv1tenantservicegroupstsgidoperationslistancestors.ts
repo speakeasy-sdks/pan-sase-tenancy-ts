@@ -7,13 +7,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 import { Expose, Type } from "class-transformer";
 
-export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSecurity extends SpeakeasyBase {
-  @SpeakeasyMetadata({
-    data: "security, scheme=true;type=http;subtype=bearer;name=Authorization",
-  })
-  bearer: string;
-}
-
 /**
  * Identifies the response structure's sort order:
  *
@@ -29,6 +22,17 @@ export enum PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSort {
 }
 
 export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsRequest extends SpeakeasyBase {
+  /**
+   * A unique identifier for the tenant service group.
+   *
+   * @remarks
+   *
+   */
+  @SpeakeasyMetadata({
+    data: "pathParam, style=simple;explode=false;name=tsg_id",
+  })
+  tsgId: string;
+
   /**
    * Provide a comma-separated list of fields you want returned.
    *
@@ -64,17 +68,6 @@ export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsRequest
    */
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
   sort?: PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSort;
-
-  /**
-   * A unique identifier for the tenant service group.
-   *
-   * @remarks
-   *
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=tsg_id",
-  })
-  tsgId: string;
 }
 
 /**
