@@ -17,89 +17,83 @@ import { Expose, Type } from "class-transformer";
  *
  */
 export enum PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSort {
-  Asc = "asc",
-  Desc = "desc",
+    Asc = "asc",
+    Desc = "desc",
 }
 
 export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsRequest extends SpeakeasyBase {
-  /**
-   * A unique identifier for the tenant service group.
-   *
-   * @remarks
-   *
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=tsg_id",
-  })
-  tsgId: string;
+    /**
+     * A unique identifier for the tenant service group.
+     *
+     * @remarks
+     *
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=tsg_id" })
+    tsgId: string;
 
-  /**
-   * Provide a comma-separated list of fields you want returned.
-   *
-   * @remarks
-   *
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=fields",
-  })
-  fields?: string;
+    /**
+     * Provide a comma-separated list of fields you want returned.
+     *
+     * @remarks
+     *
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string;
 
-  /**
-   * Indicates if the TSG used to generate this hierarchy is
-   *
-   * @remarks
-   * included in the resulting TSG list. `true` to include
-   * self. Default is `false`.
-   *
-   */
-  @SpeakeasyMetadata({
-    data: "queryParam, style=form;explode=true;name=include_self",
-  })
-  includeSelf?: boolean;
+    /**
+     * Indicates if the TSG used to generate this hierarchy is
+     *
+     * @remarks
+     * included in the resulting TSG list. `true` to include
+     * self. Default is `false`.
+     *
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=include_self" })
+    includeSelf?: boolean;
 
-  /**
-   * Identifies the response structure's sort order:
-   *
-   * @remarks
-   *
-   * * `asc` : From root to leaf.
-   * * `desc` : From leaf to root.
-   *
-   */
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
-  sort?: PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSort;
+    /**
+     * Identifies the response structure's sort order:
+     *
+     * @remarks
+     *
+     * * `asc` : From root to leaf.
+     * * `desc` : From leaf to root.
+     *
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
+    sort?: PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsSort;
 }
 
 /**
  * Successful response.
  */
 export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestors200ApplicationJSON extends SpeakeasyBase {
-  /**
-   * Total count of the items
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "count" })
-  count: number;
+    /**
+     * Total count of the items
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "count" })
+    count: number;
 
-  @SpeakeasyMetadata({ elemType: shared.TenantServiceGroup })
-  @Expose({ name: "items" })
-  @Type(() => shared.TenantServiceGroup)
-  items: shared.TenantServiceGroup[];
+    @SpeakeasyMetadata({ elemType: shared.TenantServiceGroup })
+    @Expose({ name: "items" })
+    @Type(() => shared.TenantServiceGroup)
+    items: shared.TenantServiceGroup[];
 }
 
 export class PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestorsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Successful response.
-   */
-  @SpeakeasyMetadata()
-  postTenancyV1TenantServiceGroupsTsgIdOperationsListAncestors200ApplicationJSONObject?: PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestors200ApplicationJSON;
+    /**
+     * Successful response.
+     */
+    @SpeakeasyMetadata()
+    postTenancyV1TenantServiceGroupsTsgIdOperationsListAncestors200ApplicationJSONObject?: PostTenancyV1TenantServiceGroupsTsgIdOperationsListAncestors200ApplicationJSON;
 }

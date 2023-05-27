@@ -13,61 +13,61 @@ import { Expose } from "class-transformer";
  *
  */
 export enum TenantServiceGroupUpdateVertical {
-  HighTech = "High Tech",
-  Education = "Education",
-  Manufacturing = "Manufacturing",
-  Hospitality = "Hospitality",
-  ProfessionalAndLegalServices = "Professional & Legal Services",
-  WholesaleAndRetail = "Wholesale & Retail",
-  Finance = "Finance",
-  Telecommunications = "Telecommunications",
-  StateAndLocalGovernment = "State & Local Government",
-  TransportationAndLogistics = "Transportation & Logistics",
-  FederalGovernment = "Federal Government",
-  MediaAndEntertainment = "Media & Entertainment",
-  NonclassifiableEstablishments = "Nonclassifiable Establishments",
-  Healthcare = "Healthcare",
-  UtilitiesAndEnergy = "Utilities & Energy",
-  Insurance = "Insurance",
-  Agriculture = "Agriculture",
-  PharmaAndLifeSciences = "Pharma & Life Sciences",
-  Construction = "Construction",
-  AerospaceAndDefense = "Aerospace & Defense",
-  RealEstate = "Real Estate",
-  RestaurantFoodIndustry = "Restaurant/Food Industry",
-  Other = "Other",
+    HighTech = "High Tech",
+    Education = "Education",
+    Manufacturing = "Manufacturing",
+    Hospitality = "Hospitality",
+    ProfessionalAndLegalServices = "Professional & Legal Services",
+    WholesaleAndRetail = "Wholesale & Retail",
+    Finance = "Finance",
+    Telecommunications = "Telecommunications",
+    StateAndLocalGovernment = "State & Local Government",
+    TransportationAndLogistics = "Transportation & Logistics",
+    FederalGovernment = "Federal Government",
+    MediaAndEntertainment = "Media & Entertainment",
+    NonclassifiableEstablishments = "Nonclassifiable Establishments",
+    Healthcare = "Healthcare",
+    UtilitiesAndEnergy = "Utilities & Energy",
+    Insurance = "Insurance",
+    Agriculture = "Agriculture",
+    PharmaAndLifeSciences = "Pharma & Life Sciences",
+    Construction = "Construction",
+    AerospaceAndDefense = "Aerospace & Defense",
+    RealEstate = "Real Estate",
+    RestaurantFoodIndustry = "Restaurant/Food Industry",
+    Other = "Other",
 }
 
 export class TenantServiceGroupUpdate extends SpeakeasyBase {
-  /**
-   * The tenant service group's display name.
-   *
-   * @remarks
-   *
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "display_name" })
-  displayName?: string;
+    /**
+     * The tenant service group's display name.
+     *
+     * @remarks
+     *
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "display_name" })
+    displayName?: string;
 
-  /**
-   * The email address of the person or organization that should
-   *
-   * @remarks
-   * be contacted for support of this TSG.
-   *
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "support_contact" })
-  supportContact?: string;
+    /**
+     * The email address of the person or organization that should
+     *
+     * @remarks
+     * be contacted for support of this TSG.
+     *
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "support_contact" })
+    supportContact?: string;
 
-  /**
-   * A token that identifies the business vertical supported by the SASE
-   *
-   * @remarks
-   * products managed by this TSG.
-   *
-   */
-  @SpeakeasyMetadata()
-  @Expose({ name: "vertical" })
-  vertical?: TenantServiceGroupUpdateVertical;
+    /**
+     * A token that identifies the business vertical supported by the SASE
+     *
+     * @remarks
+     * products managed by this TSG.
+     *
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "vertical" })
+    vertical?: TenantServiceGroupUpdateVertical;
 }

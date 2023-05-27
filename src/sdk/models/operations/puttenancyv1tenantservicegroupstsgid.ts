@@ -7,34 +7,32 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class PutTenancyV1TenantServiceGroupsTsgIdRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-  tenantServiceGroupUpdate: shared.TenantServiceGroupUpdate;
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    tenantServiceGroupUpdate: shared.TenantServiceGroupUpdate;
 
-  /**
-   * A unique identifier for the tenant service group.
-   *
-   * @remarks
-   *
-   */
-  @SpeakeasyMetadata({
-    data: "pathParam, style=simple;explode=false;name=tsg_id",
-  })
-  tsgId: string;
+    /**
+     * A unique identifier for the tenant service group.
+     *
+     * @remarks
+     *
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=tsg_id" })
+    tsgId: string;
 }
 
 export class PutTenancyV1TenantServiceGroupsTsgIdResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata()
-  contentType: string;
+    @SpeakeasyMetadata()
+    contentType: string;
 
-  @SpeakeasyMetadata()
-  statusCode: number;
+    @SpeakeasyMetadata()
+    statusCode: number;
 
-  @SpeakeasyMetadata()
-  rawResponse?: AxiosResponse;
+    @SpeakeasyMetadata()
+    rawResponse?: AxiosResponse;
 
-  /**
-   * Successful response.
-   */
-  @SpeakeasyMetadata()
-  tenantServiceGroup?: shared.TenantServiceGroup;
+    /**
+     * Successful response.
+     */
+    @SpeakeasyMetadata()
+    tenantServiceGroup?: shared.TenantServiceGroup;
 }
