@@ -27,7 +27,7 @@ import { TenantServiceGroupCreateVertical, TenantServiceGroupVertical } from "sa
 
 const sdk = new SaseTenancy({
   security: {
-    bearer: "YOUR_BEARER_TOKEN_HERE",
+    bearer: "",
   },
 });
 
@@ -60,7 +60,7 @@ import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared"
 
 const sdk = new SaseTenancy({
   security: {
-    bearer: "YOUR_BEARER_TOKEN_HERE",
+    bearer: "",
   },
 });
 
@@ -85,7 +85,7 @@ import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared"
 
 const sdk = new SaseTenancy({
   security: {
-    bearer: "YOUR_BEARER_TOKEN_HERE",
+    bearer: "",
   },
 });
 
@@ -112,7 +112,7 @@ import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared"
 
 const sdk = new SaseTenancy({
   security: {
-    bearer: "YOUR_BEARER_TOKEN_HERE",
+    bearer: "",
   },
 });
 
@@ -144,7 +144,7 @@ import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared"
 
 const sdk = new SaseTenancy({
   security: {
-    bearer: "YOUR_BEARER_TOKEN_HERE",
+    bearer: "",
   },
 });
 
@@ -173,7 +173,7 @@ import { TenantServiceGroupVertical } from "sase-tenancy/dist/sdk/models/shared"
 
 const sdk = new SaseTenancy({
   security: {
-    bearer: "YOUR_BEARER_TOKEN_HERE",
+    bearer: "",
   },
 });
 
@@ -201,7 +201,7 @@ import { TenantServiceGroupUpdateVertical, TenantServiceGroupVertical } from "sa
 
 const sdk = new SaseTenancy({
   security: {
-    bearer: "YOUR_BEARER_TOKEN_HERE",
+    bearer: "",
   },
 });
 

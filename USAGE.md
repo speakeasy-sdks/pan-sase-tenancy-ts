@@ -6,7 +6,7 @@ import { TenantServiceGroupCreateVertical, TenantServiceGroupVertical } from "sa
 
 const sdk = new SaseTenancy({
   security: {
-    bearer: "YOUR_BEARER_TOKEN_HERE",
+    bearer: "",
   },
 });
 
