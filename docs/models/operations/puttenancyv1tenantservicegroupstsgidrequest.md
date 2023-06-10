@@ -1,0 +1,9 @@
+# PutTenancyV1TenantServiceGroupsTsgIdRequest
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `tenantServiceGroupUpdate`                                                         | [shared.TenantServiceGroupUpdate](../../models/shared/tenantservicegroupupdate.md) | :heavy_check_mark:                                                                 | N/A                                                                                |                                                                                    |
+| `tsgId`                                                                            | *string*                                                                           | :heavy_check_mark:                                                                 | A unique identifier for the tenant service group.<br/>                             | 1378242802                                                                         |

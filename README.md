@@ -53,15 +53,15 @@ sdk.tenancyGroup.create({
 ## Available Resources and Operations
 
 
-### [tenancyGroup](docs/tenancygroup/README.md)
+### [tenancyGroup](docs/sdks/tenancygroup/README.md)
 
-* [create](docs/tenancygroup/README.md#create) - Create a tenant service group
-* [delete](docs/tenancygroup/README.md#delete) - Delete a tenant service group
-* [get](docs/tenancygroup/README.md#get) - Get a tenant service group
-* [list](docs/tenancygroup/README.md#list) - List all tenant service groups
-* [listAncestors](docs/tenancygroup/README.md#listancestors) - List tenant service group ancestors
-* [listChildren](docs/tenancygroup/README.md#listchildren) - List tenant service group children
-* [update](docs/tenancygroup/README.md#update) - Update a tenant service group
+* [create](docs/sdks/tenancygroup/README.md#create) - Create a tenant service group
+* [delete](docs/sdks/tenancygroup/README.md#delete) - Delete a tenant service group
+* [get](docs/sdks/tenancygroup/README.md#get) - Get a tenant service group
+* [list](docs/sdks/tenancygroup/README.md#list) - List all tenant service groups
+* [listAncestors](docs/sdks/tenancygroup/README.md#listancestors) - List tenant service group ancestors
+* [listChildren](docs/sdks/tenancygroup/README.md#listchildren) - List tenant service group children
+* [update](docs/sdks/tenancygroup/README.md#update) - Update a tenant service group
 <!-- End SDK Available Operations -->
 
 ### Maturity
